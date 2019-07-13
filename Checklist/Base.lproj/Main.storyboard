@@ -33,9 +33,10 @@
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="IcV-xR-9ja" secondAttribute="trailing" constant="20" symbolic="YES" id="2Is-O4-z8D"/>
-                                        <constraint firstItem="IcV-xR-9ja" firstAttribute="centerY" secondItem="ZG9-j5-PN1" secondAttribute="centerY" id="p6d-IZ-Jhs"/>
-                                        <constraint firstItem="IcV-xR-9ja" firstAttribute="leading" secondItem="ZG9-j5-PN1" secondAttribute="leading" constant="20" symbolic="YES" id="veU-cu-O8q"/>
+                                        <constraint firstAttribute="trailing" secondItem="IcV-xR-9ja" secondAttribute="trailing" constant="20" symbolic="YES" id="HHJ-Tk-h9h"/>
+                                        <constraint firstItem="IcV-xR-9ja" firstAttribute="top" secondItem="ZG9-j5-PN1" secondAttribute="top" priority="750" constant="11.5" id="QzB-xz-YhM"/>
+                                        <constraint firstAttribute="bottom" secondItem="IcV-xR-9ja" secondAttribute="bottom" priority="750" constant="11" id="bQY-vE-zvX"/>
+                                        <constraint firstItem="IcV-xR-9ja" firstAttribute="leading" secondItem="ZG9-j5-PN1" secondAttribute="leading" constant="20" symbolic="YES" id="edQ-8d-AbK"/>
                                     </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
