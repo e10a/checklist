@@ -56,9 +56,10 @@ class ChecklistViewController: UITableViewController {
         // remove from array
         todoList.todos.remove(at: indexPath.row)
         // tell table what was deleted
-        let indexPaths = [indexPath]
-        tableView.deleteRows(at: indexPaths, with: .automatic)
-        
+         let indexPaths = [indexPath]
+         tableView.deleteRows(at: indexPaths, with: .automatic)
+        // can also just reload data...
+        // tableView.reloadData()
     }
     
     func configureText(for cell: UITableViewCell, with item: ChecklistItem) {
@@ -75,9 +76,6 @@ class ChecklistViewController: UITableViewController {
         }
         item.toggleChecked()
     }
-    
-//    @IBAction addItem() {
-//        print("added item")
-//    }
+
 }
 
