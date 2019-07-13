@@ -12,6 +12,8 @@
 		0F4DD12122D942D2000C2F02 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F4DD11F22D942D2000C2F02 /* Main.storyboard */; };
 		0F4DD12322D942D4000C2F02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F4DD12222D942D4000C2F02 /* Assets.xcassets */; };
 		0F4DD12622D942D4000C2F02 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F4DD12422D942D4000C2F02 /* LaunchScreen.storyboard */; };
+		0F4DD12E22D951A7000C2F02 /* ChecklistItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4DD12D22D951A7000C2F02 /* ChecklistItem.swift */; };
+		0F4DD13022D95A91000C2F02 /* TodoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4DD12F22D95A91000C2F02 /* TodoList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		0F4DD12222D942D4000C2F02 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0F4DD12522D942D4000C2F02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0F4DD12722D942D4000C2F02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0F4DD12D22D951A7000C2F02 /* ChecklistItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistItem.swift; sourceTree = "<group>"; };
+		0F4DD12F22D95A91000C2F02 /* TodoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 				0F4DD12222D942D4000C2F02 /* Assets.xcassets */,
 				0F4DD12422D942D4000C2F02 /* LaunchScreen.storyboard */,
 				0F4DD12722D942D4000C2F02 /* Info.plist */,
+				0F4DD12D22D951A7000C2F02 /* ChecklistItem.swift */,
+				0F4DD12F22D95A91000C2F02 /* TodoList.swift */,
 			);
 			path = Checklist;
 			sourceTree = "<group>";
@@ -136,7 +142,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F4DD11E22D942D2000C2F02 /* ChecklistViewController.swift in Sources */,
+				0F4DD12E22D951A7000C2F02 /* ChecklistItem.swift in Sources */,
 				0F4DD11C22D942D2000C2F02 /* AppDelegate.swift in Sources */,
+				0F4DD13022D95A91000C2F02 /* TodoList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
