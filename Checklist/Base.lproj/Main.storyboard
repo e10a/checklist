@@ -18,27 +18,40 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="ChecklistItem" id="zpH-Wi-dvo">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="ChecklistItem" id="zpH-Wi-dvo">
                                 <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zpH-Wi-dvo" id="ZG9-j5-PN1">
-                                    <rect key="frame" x="0.0" y="0.0" width="370" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IcV-xR-9ja">
-                                            <rect key="frame" x="20" y="11.5" width="330" height="21"/>
+                                            <rect key="frame" x="51" y="11.5" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="1001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="✅" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hLi-A0-e5A">
+                                            <rect key="frame" x="20" y="11" width="23" height="21.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="IcV-xR-9ja" secondAttribute="trailing" constant="20" symbolic="YES" id="HHJ-Tk-h9h"/>
+                                        <constraint firstItem="IcV-xR-9ja" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="hLi-A0-e5A" secondAttribute="trailing" constant="8" symbolic="YES" id="Ggb-py-Ly6"/>
+                                        <constraint firstItem="hLi-A0-e5A" firstAttribute="top" secondItem="ZG9-j5-PN1" secondAttribute="topMargin" id="Gwg-Pi-TzT"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="IcV-xR-9ja" secondAttribute="trailing" constant="20" symbolic="YES" id="HHJ-Tk-h9h"/>
                                         <constraint firstItem="IcV-xR-9ja" firstAttribute="top" secondItem="ZG9-j5-PN1" secondAttribute="top" priority="750" constant="11.5" id="QzB-xz-YhM"/>
                                         <constraint firstAttribute="bottom" secondItem="IcV-xR-9ja" secondAttribute="bottom" priority="750" constant="11" id="bQY-vE-zvX"/>
-                                        <constraint firstItem="IcV-xR-9ja" firstAttribute="leading" secondItem="ZG9-j5-PN1" secondAttribute="leading" constant="20" symbolic="YES" id="edQ-8d-AbK"/>
+                                        <constraint firstItem="IcV-xR-9ja" firstAttribute="leading" secondItem="ZG9-j5-PN1" secondAttribute="leading" constant="51" id="edQ-8d-AbK"/>
+                                        <constraint firstItem="hLi-A0-e5A" firstAttribute="leading" secondItem="ZG9-j5-PN1" secondAttribute="leading" constant="20" id="kvc-mG-PwG"/>
+                                        <constraint firstItem="hLi-A0-e5A" firstAttribute="centerY" secondItem="ZG9-j5-PN1" secondAttribute="centerY" id="teu-4o-hNv"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="uER-cM-uKI" kind="show" identifier="EditItemSegue" trigger="accessoryAction" id="7wU-g7-Cps"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -140,4 +153,7 @@
             <point key="canvasLocation" x="-49.275362318840585" y="-59.598214285714285"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="7wU-g7-Cps"/>
+    </inferredMetricsTieBreakers>
 </document>
