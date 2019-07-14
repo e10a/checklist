@@ -118,7 +118,7 @@
                                 <action selector="cancel:" destination="uER-cM-uKI" id="kZp-pC-a6G"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Add" id="bOi-PX-RAX">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Done" id="bOi-PX-RAX">
                             <connections>
                                 <action selector="done:" destination="uER-cM-uKI" id="jcu-hu-j8X"/>
                             </connections>

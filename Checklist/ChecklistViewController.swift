@@ -82,8 +82,25 @@ class ChecklistViewController: UITableViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "AddItemSegue" {
-            if let addItemViewController = segue.destination as? AddItemTableViewController {
+            if let addItemViewController = segue.destination as? AddItemTableViewController
+            {
                 addItemViewController.delegate = self
+                addItemViewController.todoList = todoList
+            }
+        } else if segue.identifier == "EditItemSegue" {
+            // first need destination view controller
+            if let addItemViewController = segue.destination as? AddItemTableViewController
+            {
+                // figuring out where the user tapped...
+                // get cell that is being editted
+                // get index path from the actual table view
+                addItemViewController.delegate = self
+                if let cell = sender as? UITableViewCell,
+                    let indexPath = tableView.indexPath(for: cell)
+                {
+                    let item = todoList.todos[indexPath.row]
+                    addItemViewController.itemToEdit = item
+                }
             }
         }
     }

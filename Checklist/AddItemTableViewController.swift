@@ -17,6 +17,9 @@ class AddItemTableViewController: UITableViewController {
     
     weak var delegate: AddItemViewControllerDelegate?
     
+    weak var todoList: TodoList?
+    weak var itemToEdit: ChecklistItem?
+    
     @IBOutlet weak var textfield: UITextField!
     @IBOutlet weak var addBarButton: UIBarButtonItem!
     @IBOutlet weak var cancelBarButton: UIBarButtonItem!
@@ -26,17 +29,30 @@ class AddItemTableViewController: UITableViewController {
     }
     
     @IBAction func done(_ sender: Any) {
-        let item = ChecklistItem()
-        if let textFieldText = textfield.text {
-            item.text = textFieldText
+        if let item = itemToEdit,
+        if let text = textfield.text
+        {
+            item.text = text
+            // delegate?.addItemViewController(self, didFinishEditing: item)
+        } else {
+            if let item = todoList?.newTodo()
+                if let textFieldText = textfield.text {
+                    item.text = textFieldText
+                }
+                item.checked = false
+                delegate?.addItemViewController(self, didFinishAdding: item)
+            }
         }
-        item.checked = false
-        delegate?.addItemViewController(self, didFinishAdding: item)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.largeTitleDisplayMode = .never 
+        navigationItem.largeTitleDisplayMode = .never
+        if let item = itemToEdit {
+            title = "Edit Item"
+            addBarButton.isEnabled = true
+            textfield.text = item.text
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
