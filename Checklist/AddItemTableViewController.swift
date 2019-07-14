@@ -15,14 +15,23 @@ import UIKit
  
 class AddItemTableViewController: UITableViewController {
     
+    weak var delegate: AddItemViewControllerDelegate?
+    
     @IBOutlet weak var textfield: UITextField!
+    @IBOutlet weak var addBarButton: UIBarButtonItem!
+    @IBOutlet weak var cancelBarButton: UIBarButtonItem!
     
     @IBAction func cancel(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
+        delegate?.addItemViewControllerDidCancel(self)
     }
     
     @IBAction func done(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
+        let item = ChecklistItem()
+        if let textFieldText = textfield.text {
+            item.text = textFieldText
+        }
+        item.checked = false
+        delegate?.addItemViewController(self, didFinishAdding: item)
     }
     
     override func viewDidLoad() {
