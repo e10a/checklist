@@ -8,8 +8,13 @@
 
 import UIKit
 
+ protocol AddItemViewControllerDelegate: class {
+    func addItemViewControllerDidCancel(_ controller: AddItemTableViewController)
+    func addItemViewController(_ controller: AddItemTableViewController, didFinishAdding item: ChecklistItem)
+ }
+ 
 class AddItemTableViewController: UITableViewController {
-
+    
     @IBOutlet weak var textfield: UITextField!
     
     @IBAction func cancel(_ sender: Any) {
