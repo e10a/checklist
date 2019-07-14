@@ -53,4 +53,13 @@ class AddItemTableViewController: UITableViewController {
         textfield.resignFirstResponder()
         return false
     }
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        guard let oldText = textfield.text,
+            let stringRange = Range(range, in: oldText) else {
+                return false
+        }
+        let newText = oldText.replacingCharacters(in: stringRange, with: string)
+        addBarButton.isEnabled = !newText.isEmpty
+        return true
+    }
  }
