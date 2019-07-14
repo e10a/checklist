@@ -15,6 +15,7 @@
 		0F4DD12E22D951A7000C2F02 /* ChecklistItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4DD12D22D951A7000C2F02 /* ChecklistItem.swift */; };
 		0F4DD13022D95A91000C2F02 /* TodoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4DD12F22D95A91000C2F02 /* TodoList.swift */; };
 		0F4DD13422DBCD13000C2F02 /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4DD13322DBCD13000C2F02 /* ItemDetailViewController.swift */; };
+		0F8A181022DBEA3500464648 /* ChecklistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8A180F22DBEA3500464648 /* ChecklistTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		0F4DD12D22D951A7000C2F02 /* ChecklistItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistItem.swift; sourceTree = "<group>"; };
 		0F4DD12F22D95A91000C2F02 /* TodoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoList.swift; sourceTree = "<group>"; };
 		0F4DD13322DBCD13000C2F02 /* ItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
+		0F8A180F22DBEA3500464648 /* ChecklistTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				0F4DD12D22D951A7000C2F02 /* ChecklistItem.swift */,
 				0F4DD12F22D95A91000C2F02 /* TodoList.swift */,
 				0F4DD13322DBCD13000C2F02 /* ItemDetailViewController.swift */,
+				0F8A180F22DBEA3500464648 /* ChecklistTableViewCell.swift */,
 			);
 			path = Checklist;
 			sourceTree = "<group>";
@@ -148,6 +151,7 @@
 				0F4DD12E22D951A7000C2F02 /* ChecklistItem.swift in Sources */,
 				0F4DD11C22D942D2000C2F02 /* AppDelegate.swift in Sources */,
 				0F4DD13422DBCD13000C2F02 /* ItemDetailViewController.swift in Sources */,
+				0F8A181022DBEA3500464648 /* ChecklistTableViewCell.swift in Sources */,
 				0F4DD13022D95A91000C2F02 /* TodoList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
