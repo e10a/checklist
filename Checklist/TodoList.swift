@@ -50,4 +50,12 @@ class TodoList {
         let randomNumber = Int.random(in: 0...titles.count-1)
         return titles[randomNumber]
     }
+    
+    func move(item: ChecklistItem, to index: Int) {
+        guard let currentIndex = todos.index(of: item) else {
+            return
+        }
+        todos.remove(at: currentIndex)
+        todos.insert(item, at: index)
+    }
 }

@@ -62,6 +62,11 @@ class ChecklistViewController: UITableViewController {
         // tableView.reloadData()
     }
     
+    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        todoList.move(item: todoList.todos[sourceIndexPath.row], to: destinationIndexPath.row)
+        tableView.reloadData()
+    }
+
     func configureText(for cell: UITableViewCell, with item: ChecklistItem) {
         if let checkmarkCell = cell as? ChecklistTableViewCell {
             checkmarkCell.todoTextLabel.text = item.text
