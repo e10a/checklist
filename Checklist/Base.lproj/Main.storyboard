@@ -49,7 +49,7 @@
                     <navigationItem key="navigationItem" title="Checklists" id="zLj-RV-fXX">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="qDb-nD-c5g">
                             <connections>
-                                <segue destination="uER-cM-uKI" kind="show" id="HAJ-hD-HwC"/>
+                                <segue destination="uER-cM-uKI" kind="show" identifier="AddItemSegue" id="HAJ-hD-HwC"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -84,6 +84,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                     <connections>
+                                                        <action selector="done:" destination="uER-cM-uKI" eventType="editingDidEndOnExit" id="aY1-fn-cZs"/>
                                                         <outlet property="delegate" destination="uER-cM-uKI" id="Pxa-yf-0x4"/>
                                                     </connections>
                                                 </textField>
@@ -104,13 +105,15 @@
                                 <action selector="cancel:" destination="uER-cM-uKI" id="kZp-pC-a6G"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Add" id="bOi-PX-RAX">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Add" id="bOi-PX-RAX">
                             <connections>
                                 <action selector="done:" destination="uER-cM-uKI" id="jcu-hu-j8X"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="addBarButton" destination="bOi-PX-RAX" id="jsD-oV-dRY"/>
+                        <outlet property="cancelBarButton" destination="t8s-P3-Qam" id="vDV-qp-PCA"/>
                         <outlet property="textfield" destination="NBw-Tc-UPU" id="gOL-7t-Ggk"/>
                     </connections>
                 </tableViewController>
