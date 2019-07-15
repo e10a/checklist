@@ -9,9 +9,9 @@
 import UIKit
 
  protocol ItemDetailViewControllerDelegate: class {
-    func itenDetailViewControllerDidCancel(_ controller: ItemDetailViewController)
-    func itenDetailViewController(_ controller: ItemDetailViewController, didFinishAdding item: ChecklistItem)
-    func itenDetailViewController(_ controller: ItemDetailViewController, didFinishEditing item: ChecklistItem)
+    func itemDetailViewControllerDidCancel(_ controller: ItemDetailViewController)
+    func itemDetailViewController(_ controller: ItemDetailViewController, didFinishAdding item: ChecklistItem)
+    func itemDetailViewController(_ controller: ItemDetailViewController, didFinishEditing item: ChecklistItem)
  }
  
 class ItemDetailViewController: UITableViewController {
@@ -26,7 +26,7 @@ class ItemDetailViewController: UITableViewController {
     @IBOutlet weak var cancelBarButton: UIBarButtonItem!
     
     @IBAction func cancel(_ sender: Any) {
-        delegate?.itenDetailViewControllerDidCancel(self)
+        delegate?.itemDetailViewControllerDidCancel(self)
     }
     
     @IBAction func done(_ sender: Any) {
@@ -34,14 +34,14 @@ class ItemDetailViewController: UITableViewController {
            let text = textfield.text
         {
             item.text = text
-            delegate?.itenDetailViewController(self, didFinishEditing: item)
+            delegate?.itemDetailViewController(self, didFinishEditing: item)
         } else {
             if let item = todoList?.newTodo() {
                 if let textFieldText = textfield.text {
                     item.text = textFieldText
                 }
                 item.checked = false
-                delegate?.itenDetailViewController(self, didFinishAdding: item)
+                delegate?.itemDetailViewController(self, didFinishAdding: item)
             }
         }
     }
