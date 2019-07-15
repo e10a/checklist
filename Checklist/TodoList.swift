@@ -65,12 +65,22 @@ class TodoList {
         return titles[randomNumber]
     }
     
-    func move(item: ChecklistItem, to index: Int) {
-        guard let currentIndex = todos.firstIndex(of: item) else {
-            return
-        }
-        todos.remove(at: currentIndex)
-        todos.insert(item, at: index)
+//    func move(item: ChecklistItem, to index: Int) {
+//        guard let currentIndex = todos.firstIndex(of: item) else {
+//            return
+//        }
+//        todos.remove(at: currentIndex)
+//        todos.insert(item, at: index)
+//    }
+    func move(
+        item: ChecklistItem,
+        from sourcePriority: Priority,
+        at sourceIndex: Int,
+        to destinationPriority: Priority,
+        at destinationIndex: Int
+    ) {
+        remove(item, from: sourcePriority, at: sourceIndex)
+        addTodo(item, for: destinationPriority, at: destinationIndex)
     }
     
     func remove(_ item: ChecklistItem, from priority: Priority, at index: Int) {
@@ -99,16 +109,33 @@ class TodoList {
         }
     }
     
-    func addTodo(_ item: ChecklistItem, for priority: Priority) {
+    func addTodo(_ item: ChecklistItem, for priority: Priority, at index: Int = -1) {
         switch priority {
         case .high:
-            return highPriorityTodos.append(item)
+            if index < 0 {
+                highPriorityTodos.append(item)
+            } else {
+                highPriorityTodos.insert(item, at: index)
+            }
+            
         case .medium:
-            return mediumPriorityTodos.append(item)
+            if index < 0 {
+                mediumPriorityTodos.append(item)
+            } else {
+                mediumPriorityTodos.insert(item, at: index)
+            }
         case .low:
-            return lowPriorityTodos.append(item)
+            if index < 0 {
+                lowPriorityTodos.append(item)
+            } else {
+                lowPriorityTodos.insert(item, at: index)
+            }
         case .no:
-            return noPriorityTodos.append(item)
+            if index < 0 {
+                noPriorityTodos.append(item)
+            } else {
+                noPriorityTodos.insert(item, at: index)
+            }
         }
     }
 }

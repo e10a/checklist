@@ -95,8 +95,22 @@ class ChecklistViewController: UITableViewController {
         }
     }
     
-    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        // todoList.move(item: todoList.todos[sourceIndexPath.row], to: destinationIndexPath.row)
+    override func tableView(
+        _ tableView: UITableView,
+        moveRowAt sourceIndexPath: IndexPath,
+        to destinationIndexPath: IndexPath
+    ) {
+        if let sourcePriority = priorityForSectionIndex(sourceIndexPath.section),
+        let destinationPriority = priorityForSectionIndex(destinationIndexPath.section) {
+            let item = todoList.todoList(for: sourcePriority)[sourceIndexPath.row]
+            todoList.move(
+                item: item,
+                from: sourcePriority,
+                at: sourceIndexPath.row,
+                to: destinationPriority,
+                at: destinationIndexPath.row
+            )
+        }
         tableView.reloadData()
     }
 
