@@ -25,8 +25,10 @@ class ChecklistViewController: UITableViewController {
         if let selectedRows = tableView.indexPathsForSelectedRows {
             for indexPath in selectedRows {
                 if let priority = priorityForSectionIndex(indexPath.section) {
-                    let item = todoList.todoList(for: priority)[indexPath.row]
-                    todoList.remove(item, from: priority, at: indexPath.row)
+                    let todos = todoList.todoList(for: priority)
+                    let rowToDelete = indexPath.row > todos.count - 1 ? todos.count - 1 : indexPath.row
+                    let item = todoList.todoList(for: priority)[rowToDelete]
+                    todoList.remove(item, from: priority, at: rowToDelete)
                 }
             }
             tableView.beginUpdates()
