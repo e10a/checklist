@@ -11,6 +11,7 @@ import UIKit
 class ChecklistViewController: UITableViewController {
     
     var todoList: TodoList
+    var tableData: [[ChecklistItem?]?]
     
     @IBAction func addItem(_ sender: Any) {
         let newRowIndex = todoList.todos.count
@@ -35,6 +36,7 @@ class ChecklistViewController: UITableViewController {
     
     required init?(coder aDecoder: NSCoder) {
         todoList = TodoList()
+        tableData = [[]]
         super.init(coder: aDecoder)
     }
     
@@ -43,6 +45,19 @@ class ChecklistViewController: UITableViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.leftBarButtonItem = editButtonItem
         tableView.allowsMultipleSelectionDuringEditing = true
+        
+        let collation = UILocalizedIndexedCollation.current()
+        let sectionTitleCount = collation.sectionTitles.count
+        var allSections = [[ChecklistItem?]?](repeating: nil, count: sectionTitleCount)
+        var sectionNumber = 0
+        for item in todoList.todos {
+            sectionNumber = collation.section(for: item, collationStringSelector: #selector(getter:ChecklistItem.text))
+            if allSections[sectionNumber] == nil {
+                allSections[sectionNumber] = [ChecklistItem?]()
+            }
+            allSections[sectionNumber]!.append(item)
+            tableData = allSections
+        }
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
