@@ -39,9 +39,9 @@ class TodoList {
         row4Item.text = "Study design patterns"
 
         addTodo(row0Item, for: Priority.medium)
-        addTodo(row1Item, for: Priority.medium)
-        addTodo(row2Item, for: Priority.medium)
-        addTodo(row3Item, for: Priority.medium)
+        addTodo(row1Item, for: Priority.low)
+        addTodo(row2Item, for: Priority.high)
+        addTodo(row3Item, for: Priority.no)
         addTodo(row4Item, for: Priority.medium)
     }
     

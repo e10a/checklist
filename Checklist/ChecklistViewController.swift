@@ -146,6 +146,27 @@ class ChecklistViewController: UITableViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
         return TodoList.Priority.allCases.count
     }
+    
+    override func tableView(
+        _ tableView: UITableView,
+        titleForHeaderInSection section: Int) -> String?
+    {
+        var title: String? = nil
+        
+        if let priority = priorityForSectionIndex(section) {
+            switch priority {
+            case .high:
+                title = "High Priorities"
+            case .medium:
+                title = "Medium Priorities"
+            case .low:
+                title = "Low Priorities"
+            case .no:
+                title = "No Priority"
+            }
+        }
+        return title
+    }
 }
 
 extension ChecklistViewController: ItemDetailViewControllerDelegate {
